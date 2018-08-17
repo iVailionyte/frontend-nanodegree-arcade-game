@@ -1,3 +1,8 @@
+const TILE_WIDTH = 101;
+const TILE_HEIGHT = 83;
+const GAME_WIDTH = 505;
+const GAME_HEIGHT = 606;
+
 // Enemies our player must avoid
 var Enemy = function() {
   this.x = 0;
@@ -25,15 +30,29 @@ Enemy.prototype.render = function() {
 
 // Now write your own player class
 const Player = function() {
-  this.x = 0;
-  this.y = 0;
+  this.x = GAME_WIDTH / 2 - TILE_WIDTH / 2;
+  this.y = GAME_HEIGHT;
   this.sprite = 'images/char-boy.png';
 };
 
 // This class requires an update(), render() and
 
 Player.prototype.update = function(dt) {
+  if (this.x < 0) {
+    this.x = 0;
+  }
 
+  if (this.y < 0) {
+    this.y = 0;
+  }
+
+  if (this.x + TILE_WIDTH > GAME_WIDTH) {
+    this.x = GAME_WIDTH - TILE_WIDTH;
+  }
+
+  if (this.y + TILE_HEIGHT + TILE_HEIGHT > GAME_HEIGHT) {
+    this.y = GAME_HEIGHT - TILE_HEIGHT - TILE_HEIGHT;
+  }
 };
 
 Player.prototype.render = function() {
@@ -45,19 +64,19 @@ Player.prototype.render = function() {
 Player.prototype.handleInput = function(key) {
   switch(key) {
     case 'up': 
-      this.y -= 83;
+      this.y -= TILE_HEIGHT;
       break;
 
     case 'down':
-      this.y += 83;
+      this.y += TILE_HEIGHT;
       break;
 
     case 'left':
-      this.x -= 101;
+      this.x -= TILE_WIDTH;
       break;
 
     case 'right':
-      this.x += 101;
+      this.x += TILE_WIDTH;
       break;
   }
 };
