@@ -4,10 +4,10 @@ const GAME_WIDTH = 505;
 const GAME_HEIGHT = 606;
 
 // Enemies our player must avoid
-var Enemy = function() {
-  this.x = 0;
-  this.y = 1 * TILE_HEIGHT;
-  this.speed = 3;
+var Enemy = function(x, y, speed) {
+  this.x = x;
+  this.y = y;
+  this.speed = speed;
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -90,16 +90,22 @@ Player.prototype.handleInput = function(key) {
 
 // Now instantiate your objects.
 
-const enemy = new Enemy();
+
 
 // Place all enemy objects in an array called allEnemies
 const allEnemies = [];
-allEnemies.push(enemy);
+
+for (let i = 0; i < 3; i++) {
+  allEnemies.push(new Enemy(randomNumber(0, GAME_WIDTH), (1 + i) * TILE_HEIGHT, randomNumber(1, 3)));
+}
+
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 // Place the player object in a variable called player
 
 const player = new Player();
-
 
 
 // This listens for key presses and sends the keys to your
