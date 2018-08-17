@@ -12,7 +12,7 @@ An arcade game that relies on JavaScript. The goal is to get your player safely 
 * Load this link in your browser https://ivailionyte.github.io/frontend-nanodegree-arcade-game/
 * Start moving a player to the top of the screen by using up, down, left, right arrow keys.
 * Try to avoid collision with the moving enemies.
-* Game end when a player collides with an enemy. 
+* Game ends when a player collides with an enemy. 
 * After lost the game resets with the player at the bottom of the screen.
 
 ## Tools
