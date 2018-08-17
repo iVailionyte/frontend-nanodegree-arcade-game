@@ -1,5 +1,7 @@
 // Enemies our player must avoid
 var Enemy = function() {
+  this.x = 0;
+  this.y = 0;
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -23,6 +25,8 @@ Enemy.prototype.render = function() {
 
 // Now write your own player class
 const Player = function() {
+  this.x = 0;
+  this.y = 0;
   this.sprite = 'images/char-boy.png';
 };
 
@@ -38,8 +42,24 @@ Player.prototype.render = function() {
 
 // a handleInput() method.
 
-Player.prototype.handleInput = function() {
+Player.prototype.handleInput = function(key) {
+  switch(key) {
+    case 'up': 
+      this.y -= 83;
+      break;
 
+    case 'down':
+      this.y += 83;
+      break;
+
+    case 'left':
+      this.x -= 101;
+      break;
+
+    case 'right':
+      this.x += 101;
+      break;
+  }
 };
 
 
