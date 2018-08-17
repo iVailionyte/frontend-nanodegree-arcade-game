@@ -6,7 +6,8 @@ const GAME_HEIGHT = 606;
 // Enemies our player must avoid
 var Enemy = function() {
   this.x = 0;
-  this.y = 0;
+  this.y = 1 * TILE_HEIGHT;
+  this.speed = 3;
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -18,6 +19,11 @@ var Enemy = function() {
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
+  this.x += this.speed;
+
+  if (this.x > GAME_WIDTH) {
+    this.x = 0 - TILE_WIDTH;
+  }
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
