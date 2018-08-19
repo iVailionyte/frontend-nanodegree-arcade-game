@@ -24,4 +24,4 @@ An arcade game that relies on JavaScript. The goal is to get your player safely 
 
 ## Inside the game
 
-![Inside the game](img/screenshot.png)
+![Inside the game](images/screenshot.png)
