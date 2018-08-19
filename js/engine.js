@@ -80,6 +80,7 @@ var Engine = (function(global) {
     function update(dt) {
         updateEntities(dt);
         checkCollisions();
+        winningGame();
     }
 
     /* This is called by the update function and loops through all of the
@@ -106,6 +107,15 @@ var Engine = (function(global) {
           player.y = GAME_HEIGHT;
         }
       });
+    }
+
+    function winningGame() {
+        if (player.x === GAME_WIDTH / 2 - TILE_WIDTH / 2 && player.y === 0) {
+          alert('You won!');
+          player.x = GAME_WIDTH / 2 - TILE_WIDTH / 2;
+          player.y = GAME_HEIGHT; 
+
+        }
     }
 
     /* This function initially draws the "game level", it will then call
