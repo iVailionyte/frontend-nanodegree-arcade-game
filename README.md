@@ -6,6 +6,7 @@ An arcade game that relies on JavaScript. The goal is to get your player safely 
 
 * [Instructions](#instructions)
 * [Tools](#tools)
+* [Inside the game](#inside)
 
 ## Instructions
 
@@ -20,3 +21,7 @@ An arcade game that relies on JavaScript. The goal is to get your player safely 
 * Object-Oriented JavaScript
 * Class functions
 * Class prototype functions
+
+## Inside the game
+
+![Inside the game](img/screenshot.png)
